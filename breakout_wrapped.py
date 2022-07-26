@@ -31,5 +31,3 @@ for step in range(500):
 wrapped_env.close()
 
 print("All checks passed")
-
-print

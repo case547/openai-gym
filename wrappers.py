@@ -8,8 +8,7 @@ class ConcatObs(gym.Wrapper):
     """Class to override reset() and return() methods of the Breakout env"""
 
     def __init__(self, env, k):
-        gym.Wrapper.__init__(self, env)
-        self.new_step_api = True
+        gym.Wrapper.__init__(self, env, new_step_api = True)
         self.k = k  # number of past frames to concatenate
         self.frames = deque([], maxlen=k)
         shp = env.observation_space.shape
